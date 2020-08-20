@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图</title>
+</head>
+<body>
+<div class="container-fluid">
+    <ul style="margin-bottom: 22px;padding-left: 0"  th:each="list:${list1[2]}">
+        <div class="media">
+
+            <div class="media-body">
+                <h3 class="media-heading" th:text="${list.name}"></h3>
+            </div>
+            <ol class="schooltitle">
+                <ul class="active" th:text="${list.defination}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.storage}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.add}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.delete}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.update}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.select}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.apply}" style="margin-top: 10px"></ul>
+            </ol>
+
+        </div>
+        <hr>
+    </ul>
+</div>
+<div class="container-fluid">
+    <ul style="margin-bottom: 22px;padding-left: 0"  th:each="list:${list3}">
+        <div class="media">
+
+            <div class="media-body">
+                <h3 class="media-heading" th:text="${list.name}"></h3>
+            </div>
+            <ol class="schooltitle">
+                <a th:id="${list.id}"></a>
+                <ul class="active" th:text="${list.defination}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.storage}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.add}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.delete}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.update}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.select}" style="margin-top: 10px"></ul>
+                <ul class="active" th:text="${list.apply}" style="margin-top: 10px"></ul>
+            </ol>
+
+        </div>
+        <hr>
+    </ul>
+</div>
+</body>
+</html>

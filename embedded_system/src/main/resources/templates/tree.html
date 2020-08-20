@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>数据结构</title>
+    <!-- 导入jquery核心类库 -->
+    <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+    <!-- 导入easyui类库 -->
+    <link id="easyuiTheme" rel="stylesheet" type="text/css" href="../js/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../js/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../css/default.css">
+    <script type="text/javascript" src="../js/easyui/jquery.easyui.min.js"></script>
+    <!--引入ztree-->
+    <script src="../js/ztree/jquery.ztree.all-3.5.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../js/ztree/zTreeStyle.css" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/me.css">
+    <link rel="stylesheet" href="/static/css/layui.css" media="all">
+
+</head>
+<style type="text/css">
+
+    /* 大盒子的样式设计 */
+
+    .con{
+
+        height: 800px;
+
+        /*background-color: blue;*/
+
+
+
+    }
+
+    /* 左边菜单栏的样式设计 */
+
+    .nav1{
+
+        height: 500px;
+
+        width: 210px;
+
+        /*background-color: yellow;*/
+
+        float: left;
+
+    }
+
+    /* 右边内容的样式设计  右边内容的宽高，自行设计*/
+
+    #page_content{
+
+        float:right;
+
+        width: 1100px;
+
+        height: 700px;
+
+        /*background-color: red;*/
+
+    }
+
+    .a:hover {
+        background-color: whitesmoke;
+
+        z-index: 30;
+    }
+
+
+</style>
+
+</head>
+
+<body>
+<div class="con">
+
+    <div class="nav1">
+
+<!--        <ul class="nav" id="side-menu">       /* 注意：此处的链接1.html到4.html就是显示的右边内容 */-->
+            <ul class="list-group" id="side-menu">
+
+            <li  class="list-group-item"><a href="/le" target="menuFrame"  style="font-size: 16px;color: #333333">线性表</a></li>
+
+            <li  class="list-group-item"><a href="/le2" target="menuFrame" style="font-size: 16px;color: #333333">树</a>
+                <div style="margin-top: 5px">
+                    <a href="/le2#2" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">1.节点</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#3" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">2.节点的度</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#4" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">3.树的度</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#5" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">4.叶子</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#6" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">5.非终端结点</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#7" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">6.双亲和孩子</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#8" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">7.兄弟</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#9" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">8.祖先</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#10" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">9.子孙</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#11" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">10.层次</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#12" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">11.堂兄弟</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#13" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">12.树的深度</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#14" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">13.有序树和无序树</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#15" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">14.森林</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#16" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">15.二叉树</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le2#17" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">16.哈夫曼树</a>
+                </div>
+
+            </li>
+
+            <li  class="list-group-item"><a href="/le3"target="menuFrame" style="font-size: 16px;color: #333333">图</a>
+
+                <div style="margin-top: 5px">
+                    <a href="/le3#19" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">1.有向图</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#20" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">2.无向图</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#21" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">3.子图</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#22" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">4.有向完全图</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#23" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">5.无向完全图</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#24" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">6.稀疏图和稠密图</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#25" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">7.权和网</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#26" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">8.邻接点</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#27" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">9.度、入度、出度</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#28" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">10.路径、路径长度</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#29" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">11.回路和环</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#30" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">12.简单路径、简单回环或简单环</a>
+                </div>
+
+                <div style="margin-top: 5px">
+                    <a href="/le3#31" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">13.连通、连通图和连通分量</a>
+                </div>
+                <div style="margin-top: 5px">
+                    <a href="/le3#32" target="menuFrame" style="margin-left:10px;margin-top:10px;font-size: 14px;color:gray">14.有向树和生成森林</a>
+                </div>
+
+            </li>
+
+
+        </ul>
+
+
+    </div>
+
+    <div id="page_content">
+
+        <iframe id="menuFrame" name="menuFrame" src="/point" style="overflow:visible;" scrolling="yes"
+
+                frameborder="no"   width="100%" height="100%" ></iframe>
+
+    </div>
+
+</div>
+</body>
+
+
+</html>
